@@ -4,14 +4,15 @@ def word_counter(str, dictionnary)
     array = []
     string_words = str.downcase.split(/[\s,',!,?]/)
 
-    dictionnary.each do |dic_word|
-        if string_words.any?{|single_word| single_word.include? dic_word}
-            array.push(dic_word)
+    string_words.each do |single_word|
+        dictionnary.each do |dic_word| 
+            if single_word.include? dic_word
+              array.push(dic_word)
+            end
         end
-    end
-   
-    
-    puts array.tally
+    end 
+
+           puts array.tally
     return array.tally
 end
 

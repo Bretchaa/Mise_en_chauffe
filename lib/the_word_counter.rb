@@ -5,12 +5,14 @@ def word_counter(str, dictionnary)
     string_words = str.downcase.split(/[\s,',!,?]/)
 
     dictionnary.each do |dic_word|
-        if string_words.any?{|single_word| dic_word.include? single_word}
+        if string_words.any?{|single_word| single_word.include? dic_word}
             array.push(dic_word)
         end
     end
-
-    puts array
+   
+    
+    puts array.tally
+    return array.tally
 end
 
 word_counter("Howdy partner, sit down! How's it going?", dictionnary)
